@@ -5,7 +5,7 @@ import pandas as pd
 import json
 import const
 
-def download_juzi(scope,page=1):
+def download_juzi(scope,page=2):
     token = const.TOKEN
     headers = {
         'authority': 'www.itjuzi.com',
@@ -100,7 +100,6 @@ def download_juzi(scope,page=1):
         
         # 将json格式数据转化为dataframe
     df = pd.DataFrame.from_records(result_json_array)
-    df.to_csv(r'C:\Users\ZY\Desktop\weekly_report\{}_weekly_report.csv'.format(scope))
+    df.to_csv(r'C:\Users\ZY\Desktop\weekly_report\{}_P2_weekly_report.csv'.format(scope))
 
     return df 
-
